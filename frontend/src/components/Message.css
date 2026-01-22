@@ -1,0 +1,119 @@
+.message {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message-user {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.message-assistant {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e0e0e0;
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+}
+
+.message-streaming {
+  border-color: rgba(102, 126, 234, 0.4);
+}
+
+.streaming-cursor {
+  display: inline-block;
+  color: #667eea;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.message-content {
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+/* Markdown styling for assistant messages */
+.message-assistant .message-content h1,
+.message-assistant .message-content h2,
+.message-assistant .message-content h3 {
+  margin: 0.5em 0 0.3em 0;
+  font-weight: 600;
+}
+
+.message-assistant .message-content p {
+  margin: 0.5em 0;
+}
+
+.message-assistant .message-content ul,
+.message-assistant .message-content ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.message-assistant .message-content li {
+  margin: 0.3em 0;
+}
+
+.message-assistant .message-content strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.message-assistant .message-content code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.9em;
+}
+
+.message-assistant .message-content pre {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0.5em 0;
+}
+
+.message-assistant .message-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.message-assistant .message-content a {
+  color: #8ecfff;
+  text-decoration: none;
+}
+
+.message-assistant .message-content a:hover {
+  text-decoration: underline;
+}
+
+.message-assistant .message-content blockquote {
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
+  margin: 0.5em 0;
+  padding-left: 1em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.message-metrics {
+  font-size: 11px;
+  opacity: 0.6;
+  margin-top: 8px;
+  font-family: 'Monaco', 'Menlo', monospace;
+}
