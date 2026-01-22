@@ -61,7 +61,7 @@ async function createRegionAgent(region) {
         ['placeholder', '{agent_scratchpad}'],
     ]);
 
-    const agent = await createToolCallingAgent({
+    const agent =  createToolCallingAgent({
         llm: model,
         tools,
         prompt,
