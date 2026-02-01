@@ -17,6 +17,8 @@ export const COUNTRY_NAMES = {
     'SA': 'Saudi Arabia',
 };
 
+export const RESTRICTED_BRANDS = ["huawei", "samsung"]
+
 // Currency info by region
 export const CURRENCIES = {
     'US': 'USD ($)',

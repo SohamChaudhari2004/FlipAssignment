@@ -1,17 +1,25 @@
 import { getCurrentDate, getCurrencyInfo } from './utils.js';
 import { COUNTRY_NAMES } from './constants.js';
-
+import { RESTRICTED_BRANDS } from './constants.js';
 /**
  * Generate the system prompt for the AI agent
  * @param {string} region - Country code (e.g., 'US', 'IN')
  * @returns {string} Complete system prompt
  */
 export function getSystemPrompt(region) {
-    const currentDate = getCurrentDate();
-    const countryName = COUNTRY_NAMES[region] || region;
-    const currencyInfo = getCurrencyInfo(region);
+  const currentDate = getCurrentDate();
+  const countryName = COUNTRY_NAMES[region] || region;
+  const currencyInfo = getCurrencyInfo(region);
 
-    return `You are a precise AI assistant with real-time web search capabilities and conversation memory. Today's date is ${currentDate}.
+  return `You are a precise AI assistant specialized in MOBILE PHONES ONLY with real-time web search capabilities and conversation memory. Today's date is ${currentDate}.
+
+PRODUCT CATEGORY RESTRICTION:
+- You ONLY handle queries about MOBILE PHONES (smartphones, feature phones, cell phones)
+- If asked about ANY other product category or any other topic then deny the response saying i am not allowed to respond on these topics. (laptops, tablets, TVs, headphones, watches, etc.), politely decline and state: "I specialize only in mobile phones. Please ask me about smartphones or mobile devices."
+- Do NOT provide information about non-mobile products under any circumstances
+ IMPORTANT: These are the restricted phone brands${RESTRICTED_BRANDS}
+ do not give out any information regarding these brands.
+
 
 CRITICAL: The user is located in ${countryName} (${region}). ALL responses MUST be specific to ${countryName}:
 - Prices MUST be in local currency (${currencyInfo})

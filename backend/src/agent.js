@@ -38,7 +38,7 @@ export async function initializeAgent() {
         // Store tools and model for dynamic prompt creation
         agentExecutor = { model, tools };
 
-        console.log('Agent initialized successfully with Tavily web search, memory, and streaming');
+        console.error('Agent initialized successfully with Tavily web search, memory, and streaming');
         return true;
     } catch (error) {
         console.error('Failed to initialize agent:', error.message);
